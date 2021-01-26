@@ -1,5 +1,5 @@
 class Menu
-  attr_reader :meal_options, :dishes, :customer_total, :store_order
+  attr_reader :dishes
 
   MEAL_OPTIONS = {:Hamburger=>5, :Pizza=>6, :Pasta=>4,:Fish_and_chips=>5,:Salad=>3,:Lamb_Shank=>7}
 
