@@ -9,7 +9,7 @@
   - .print_my_dishes - shows dishes you have selected)
   - .my_total(integer) - Enter total.  If total is correct then the order is placed
 
-#### Code Example 
+#### Code Example
 ```
 λ irb
 irb(main):001:0> require './lib/Menu.rb'
@@ -34,7 +34,6 @@ irb(main):007:0> my_meal.print_my_dishes
 => ["Hamburger (£5) x 3 = £15", "Pasta (£4) x 2 = £8"]
 irb(main):008:0> my_meal.my_total(23)
 => "Amount given is correct.  Food ordered"
-
 ```
 
 #### Edge Cases

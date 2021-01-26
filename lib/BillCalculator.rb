@@ -1,6 +1,5 @@
 class BillCalculator
   attr_accessor :total, :order
-  attr_writer :meal_options
 
     def initialize(meal_options)
       @meal_options = meal_options
