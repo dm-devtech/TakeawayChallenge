@@ -6,7 +6,6 @@ class Menu
     def initialize(printer = Print.new, bill = BillCalculator.new(MEAL_OPTIONS))
       @dishes = dishes
       @printer = printer
-      @customer_total
       @bill = bill
     end
 
@@ -15,8 +14,7 @@ class Menu
       raise 'Quantity must be an integer e.g. 4' if !dishes.values.any?(Integer)
       raise 'Dish selected must be a symbol e.g. :Hamburger' if !dishes.keys.any?(Symbol)
       @dishes = dishes
-      @bill.calculate_total(@dishes)
-
+      @bill.calculate_total(dishes)
     end
 
     def print_all
@@ -29,14 +27,13 @@ class Menu
     end
 
     def my_total(total)
-      @customer_total = total
-      total_error
+      total_error(total)
     end
 
     private
 
-    def total_error
-      raise "Total entered (£#{@customer_total}) is incorrect.  Actual total is £#{@bill.total}" if @customer_total != @bill.total
+    def total_error(total)
+      raise "Total entered (£#{total}) is incorrect.  Actual total is £#{@bill.total}" if total != @bill.total
       puts "Amount given is correct.  Food ordered"
     end
 
