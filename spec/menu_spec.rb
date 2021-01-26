@@ -43,14 +43,14 @@ describe Menu do
 
         it 'check that if total entered is incorrect an error is given' do
           subject.select(:Hamburger=>3, :Pizza=>2, :Salad=>5)
-          expect{ subject.my_total(42)}.to output("Amount given is correct.  Food ordered\n").to_stdout
+          expect(subject.my_total(42)).to eq("Amount given is correct.  Food ordered")
         end
     end
 
     describe '#print_my_dishes' do
       it 'expects order to print out with quantities' do
         subject.select(:Hamburger=>3, :Pizza=>2, :Salad=>5)
-        expect{subject.print_my_dishes}.to output("Hamburger (£5) x 3 = £15\nPizza (£6) x 2 = £12\nSalad (£3) x 5 = £15\n").to_stdout
+        expect(subject.print_my_dishes).to eq(["Hamburger (£5) x 3 = £15", "Pizza (£6) x 2 = £12", "Salad (£3) x 5 = £15"])
       end
     end
 

@@ -23,7 +23,7 @@ class Menu
 
     def print_my_dishes
       store_order
-      puts @bill.order
+      return @bill.order
     end
 
     def my_total(total)
@@ -34,7 +34,7 @@ class Menu
 
     def total_error(total)
       raise "Total entered (£#{total}) is incorrect.  Actual total is £#{@bill.total}" if total != @bill.total
-      puts "Amount given is correct.  Food ordered"
+      return "Amount given is correct.  Food ordered"
     end
 
     def store_order
