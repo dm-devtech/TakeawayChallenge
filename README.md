@@ -37,9 +37,12 @@ irb(main):008:0> my_meal.my_total(23)
 ```
 
 #### Edge Cases
-- Dish given must be Symbol
-- Quantity must be an integer
-- Order must be Given in a hash
+- Dish given must be Symbol e.g. {Hamburger=>3} or for multiple orders {Hamburger=>3, Pizza=>5}
+- Quantity must be an integer not a string e.g. {Hamburger=>5} not {Hamburger=>"5"}
+- Order must be Given in a hash {Hamburger=>5} not an array or string.
+
+#### Future features
+- Improve ease of inputting order
 
 #### Coverage
 COVERAGE: 100.00% -- 109/109 lines in 6 files
